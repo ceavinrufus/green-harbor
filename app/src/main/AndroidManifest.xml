@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permission declarations -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- A camera with (optional) RAW capability is required to use this application -->
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature android:name="android.hardware.camera.raw" android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +19,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenHarbor"
         tools:targetApi="31">
+        <activity
+            android:name=".CaptureComplainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_capture_complain"
+            android:theme="@style/Theme.GreenHarbor" />
+        <activity
+            android:name=".AssetTrackingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_asset_tracking"
+            android:theme="@style/Theme.GreenHarbor" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
