@@ -78,9 +78,10 @@ class CaptureComplainActivity : ComponentActivity() {
                                     Text(
                                         text = "Capture & Complain",
                                         style = MaterialTheme.typography.bodyLarge,
-                                        color = Color.White,
                                         fontWeight = FontWeight.SemiBold,
-                                        modifier = Modifier.padding(end = 60.dp)
+                                        color = Color.White,
+                                        modifier = Modifier.padding(end = 60.dp),
+                                        onTextLayout = null
                                     )
                                 }
                             },

@@ -74,11 +74,13 @@ class MainActivity : ComponentActivity() {
                         ) {
                             Text(
                                 text = "Hey there, ",
-                                style = MaterialTheme.typography.titleLarge
+                                style = MaterialTheme.typography.titleLarge,
+                                onTextLayout = null
                             )
                             Text(
                                 text = "Syafiq!",
-                                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
+                                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                                onTextLayout = null
                             )
                         }
                         Spacer(modifier = Modifier.height(16.dp))
@@ -89,7 +91,8 @@ class MainActivity : ComponentActivity() {
                         ) {
                             Text(
                                 text = "Seems like there are 3 containers that need to be transported.",
-                                style = MaterialTheme.typography.bodyLarge
+                                style = MaterialTheme.typography.bodyLarge,
+                                onTextLayout = null
                             )
                         }
                         Spacer(modifier = Modifier.height(16.dp))
@@ -112,7 +115,8 @@ class MainActivity : ComponentActivity() {
                         Row(modifier = Modifier.padding(horizontal = 32.dp)) {
                             Text(
                                 text = "What do you want to do?",
-                                style = MaterialTheme.typography.bodyMedium
+                                style = MaterialTheme.typography.bodyMedium,
+                                onTextLayout = null
                             )
                         }
                         Spacer(modifier = Modifier.height(16.dp))
@@ -142,13 +146,15 @@ class MainActivity : ComponentActivity() {
                                     text = "Asset Tracking",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Black
+                                    color = Color.Black,
+                                    onTextLayout = null
                                 )
                                 Text(
                                     text = ">",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Black
+                                    color = Color.Black,
+                                    onTextLayout = null
                                 )
                             }
                         }
@@ -181,13 +187,15 @@ class MainActivity : ComponentActivity() {
                                     text = "Activity History",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Black
+                                    color = Color.Black,
+                                    onTextLayout = null
                                 )
                                 Text(
                                     text = ">",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Black
+                                    color = Color.Black,
+                                    onTextLayout = null
                                 )
                             }
                         }
