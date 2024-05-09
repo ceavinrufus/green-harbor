@@ -74,13 +74,11 @@ class MainActivity : ComponentActivity() {
                         ) {
                             Text(
                                 text = "Hey there, ",
-                                style = MaterialTheme.typography.titleLarge,
-                                onTextLayout = null
+                                style = MaterialTheme.typography.titleLarge
                             )
                             Text(
                                 text = "Syafiq!",
-                                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                                onTextLayout = null
+                                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
                             )
                         }
                         Spacer(modifier = Modifier.height(16.dp))
@@ -91,8 +89,7 @@ class MainActivity : ComponentActivity() {
                         ) {
                             Text(
                                 text = "Seems like there are 3 containers that need to be transported.",
-                                style = MaterialTheme.typography.bodyLarge,
-                                onTextLayout = null
+                                style = MaterialTheme.typography.bodyLarge
                             )
                         }
                         Spacer(modifier = Modifier.height(16.dp))
@@ -106,17 +103,16 @@ class MainActivity : ComponentActivity() {
                                     shape = RoundedCornerShape(20.dp)
                                 )
                         )
-                        Spacer(modifier = Modifier.height(16.dp))
+                        Spacer(modifier = Modifier.height(28.dp))
                         Divider(
-                            color = Color.Gray,
+                            color = Color(121, 121, 121),
                             thickness = 1.dp
                         ) // Horizontal gray line behind the green rectangle
-                        Spacer(modifier = Modifier.height(16.dp))
+                        Spacer(modifier = Modifier.height(28.dp))
                         Row(modifier = Modifier.padding(horizontal = 32.dp)) {
                             Text(
                                 text = "What do you want to do?",
-                                style = MaterialTheme.typography.bodyMedium,
-                                onTextLayout = null
+                                style = MaterialTheme.typography.bodySmall
                             )
                         }
                         Spacer(modifier = Modifier.height(16.dp))
@@ -146,15 +142,13 @@ class MainActivity : ComponentActivity() {
                                     text = "Asset Tracking",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Black,
-                                    onTextLayout = null
+                                    color = Color.Black
                                 )
                                 Text(
                                     text = ">",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Black,
-                                    onTextLayout = null
+                                    color = Color.Black
                                 )
                             }
                         }
@@ -184,18 +178,16 @@ class MainActivity : ComponentActivity() {
                                 horizontalArrangement = Arrangement.SpaceBetween
                             ) {
                                 Text(
-                                    text = "Activity History",
+                                    text = "Capture & Complain",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Black,
-                                    onTextLayout = null
+                                    color = Color.Black
                                 )
                                 Text(
                                     text = ">",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Black,
-                                    onTextLayout = null
+                                    color = Color.Black
                                 )
                             }
                         }

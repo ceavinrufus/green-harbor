@@ -10,7 +10,6 @@ import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraDevice
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.params.StreamConfigurationMap
-import android.media.ImageReader
 import android.os.Handler
 import android.os.HandlerThread
 import android.util.AttributeSet
@@ -21,7 +20,6 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import java.util.concurrent.Semaphore
 
 class CameraPreview @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -48,7 +46,8 @@ class CameraPreview @JvmOverloads constructor(
                 surface: SurfaceTexture,
                 width: Int,
                 height: Int
-            ) {}
+            ) {
+            }
 
             override fun onSurfaceTextureDestroyed(surface: SurfaceTexture): Boolean {
                 return false
@@ -99,7 +98,6 @@ class CameraPreview @JvmOverloads constructor(
             e.printStackTrace()
         }
     }
-
 
     private fun createCameraPreviewSession() {
         val surfaceTexture = surfaceTexture
@@ -156,10 +154,20 @@ class CameraPreview @JvmOverloads constructor(
         stopBackgroundThread()
     }
 
-    fun captureImage(): ImageBitmap {
-        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-        val pixels = IntArray(width * height)
-        bitmap.setPixels(pixels, 0, width, 0, 0, width, height)
-        return bitmap.asImageBitmap()
+    fun captureImage(): ImageBitmap? {
+        return try {
+            val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+            val surface = Surface(surfaceTexture)
+            val captureBuilder =
+                cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE)
+            captureBuilder.addTarget(surface)
+            val captureCallback = object : CameraCaptureSession.CaptureCallback() {}
+            cameraCaptureSession.capture(captureBuilder.build(), captureCallback, null)
+            surfaceTexture?.release()
+            bitmap.asImageBitmap()
+        } catch (e: CameraAccessException) {
+            e.printStackTrace()
+            null
+        }
     }
 }
